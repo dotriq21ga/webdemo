@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .form-container 
+        .editOption-text Chỉnh sửa danh mục game
+        form(method = 'POST' , action='/option/edit/'+ options._id  enctype="multipart/form-data")
+            .mb-3.mt-3
+                input.form-control.editOption-input(type="text" name="game" value=options.game)
+            .mb-3.mt-3
+                label.editOption-lb-file(for="myFile") Chọn ảnh mới
+                input.login-input(type="file" id="myFile" name="image" multiple)
+            .mb-3.mt-3
+                label.editOption-lb-file Ảnh cũ
+                img.editOption-input(src='/'+options.img style="width:60%").card-img-top
+            button.editOption-btn(type="submit" class="btn btn-primary") Xong
+    

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    .container-fluid
+        
+        #demo.carousel.slide(data-bs-ride="carousel")
+
+        
+            .carousel-indicators
+                button.active(type="button" data-bs-target="#demo" data-bs-slide-to="0")
+                button(type="button" data-bs-target="#demo" data-bs-slide-to="1")
+                button(type="button" data-bs-target="#demo" data-bs-slide-to="2")
+        
+            .carousel-inner
+                .carousel-item.active
+                    img(src="/img/110-202112-GiangsinhDAU-Masterbanner-1220x400.jpg").d-block.w-100
+                
+                .carousel-item
+                    img(src="/img/111-202112-TopupGiangSinh70-1220x400.jpg").d-block.w-100
+                
+                .carousel-item
+                    img(src="/img/27-202112-BattlePasssDebonair-1220x400.jpg").d-block.w-100
+                
+
+            
+            button.carousel-control-prev(type="button" data-bs-target="#demo" data-bs-slide="prev")
+                span.carousel-control-prev-icon
+            
+            button.carousel-control-next(type="button" data-bs-target="#demo" data-bs-slide="next")
+                span.carousel-control-next-icon
+    .index-text Chọn game             
+    each option in options
+        .index-set-display
+            .card(style="width:350px")
+                img(src=option.img style="height:200px")
+                .card-body
+                    h4.index-text #{option.game}
+                a(href='/option/account/'+option.slug).btn.btn-primary Chọn

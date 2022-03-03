@@ -1,0 +1,70 @@
+doctype html
+html 
+    head
+        title profile
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    body 
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                </ul>
+                <form class="d-flex box-account">
+                    if(user.admin == true)
+                        li 
+                            a(class="nav-link fas fa-unlock" href="/transaction/"+user.username) Chuyển tiền
+                        li 
+                            a(class="nav-link fas fa-user-secret" href="/admin/quantriweb") Quản Trị Web
+                    li 
+                        a(class="nav-link fas fa-unlock" href="/users/logout") Đăng xuất
+                </form>
+                </div>
+            </div>
+        </nav>
+        .container-profile
+            table
+                tr 
+                    td(rowspan = "6")
+                        img(class="img-profile" src="/img/trend-avatar-1.jpg")
+                tr
+                    td Tên : #{user.name}
+                tr
+                    td Email : #{user.email}
+                tr 
+                    td Tài khoản : #{user.username}
+                tr 
+                    td Số dư : #{user.money} đ
+                tr 
+                    if(user.admin == false)
+                        td Chức vụ : Thành viên
+                    else 
+                        td Chức vụ : Admin
+        .container-profile
+            table(style="width:100%" )
+                tr(class = "text-profile")
+                    td ID Tài Khoản
+                    td Tên Game
+                    td Giá 
+                    td Tài Khoản
+                    td Mật Khẩu
+                each account in accounts
+                    tr(class = "text-profile")  
+                        td #{account._id}
+                        td #{account.name}
+                        td #{account.money} đ
+                        td
+                        td
+
+
+                
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

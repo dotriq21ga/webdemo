@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .login-container 
+        .login-text Đăng Kí
+        form(method = 'POST' action='/users/register')
+            .mb-3.mt-3
+                input.form-control.login-input(type="text" placeholder="Tên" name="name")
+
+            .mb-3.mt-3
+                input.form-control.login-input(type="text" placeholder="Gmail" id="email" name="email")
+
+            .mb-3.mt-3
+                input.form-control.login-input(type="text" placeholder="Tài khoản" name="username")
+
+            .mb-3
+                input.form-control.login-input(type="password" id="pwd" placeholder="Mật khẩu" name="password")
+
+            .mb-3
+                input.form-control.login-input(type="password" id="pwd" placeholder="Nhập lại mật khẩu" name="password2")
+
+                button.login-submit.btn.btn-danger(type="submit") Đăng kí
+                a.btn-secondary.btn.login-submit(href='/users/login') Đã có tài khoản?Đăng nhập ngay!

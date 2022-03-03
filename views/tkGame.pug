@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    each account in accounts
+        if(account.buy == null)
+            .container-fluid.ac-margin
+                .card(style="width:350px")
+                    img.card-img-top(style="height:170px" src='/'+ account.image[0]) 
+                    .card-body
+                        h4.card-title.index-text #{account.money}                    
+                    a(href='/accounts/'+account.id).btn.btn-primary Chi tiết

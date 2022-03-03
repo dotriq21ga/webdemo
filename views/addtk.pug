@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .login-container 
+            form(method = 'POST' action='/accounts/add/'+options.slug, enctype="multipart/form-data")
+                .mb-3.mt-3
+                    input.form-control.login-input(type="text" name="name" value =options.game )      
+                .mb-3.mt-3
+                    input.form-control.login-input(type="text" placeholder="Nhập tiêu đề , mô tả " name="title") 
+                .mb-3.mt-3
+                    input.form-control.login-input(type="text" placeholder="Giá" name="money")
+                .mb-3.mt-3
+                    label.lb-file(for="myFile") Chọn ảnh
+                    input.login-input(type="file" id="myFile" name="images" multiple)
+            
+                button.login-submit(type="submit" class="btn btn-primary") Xong

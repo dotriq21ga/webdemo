@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .login-container 
+        .login-text Đăng Nhập
+        form(method = 'POST' action='/users/login')
+            .mb-3.mt-3
+                input.form-control.login-input(type="text" placeholder="Tài khoản" name="username")
+            .mb-3
+                input.form-control.login-input( type="password" id="pwd" placeholder="Mật khẩu" name="password")
+                button.btn.btn-danger.login-submit(type="submit") Đăng nhập   
+                a.btn.btn-secondary.login-submit(href='/users/register') Chưa có tài khoản?Đăng kí ngay!
